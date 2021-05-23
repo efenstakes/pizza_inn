@@ -1,0 +1,12 @@
+@import '../../theme/commons';
+
+
+.filters {
+    display: flex;
+    justify-content: center;
+}
+
+.filter_chip__selected {
+    background-color: $primary_color;
+    color: white;
+}
