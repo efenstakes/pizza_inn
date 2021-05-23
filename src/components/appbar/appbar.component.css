@@ -1,0 +1,33 @@
+.header-md::after {
+    display: none;
+}
+
+.appbar {
+    padding-left: 16px;
+    padding-right: 16px;
+
+    box-shadow: none;
+    border: none;
+    outline: none;
+}
+
+
+@media screen and (min-width: 600px) {
+    
+    
+    .appbar {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+}
+
+@media screen and (min-width: 800px) {
+    
+    
+    .appbar {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+
+}
