@@ -10,10 +10,11 @@ import './food_card.component.scss'
 
 interface ComponentProps {
     food: Food,
+    setSelectedFood: Function,
 }
-const FoodCardComponent: React.FC<ComponentProps> = ({ food }) => {
+const FoodCardComponent: React.FC<ComponentProps> = ({ food, setSelectedFood }) => {
     return (
-        <div className="food_card">
+        <div className="food_card" onClick={ ()=> setSelectedFood(food) }>
             <div className="food_card__image__wrapper">
                 <div className="food_card__image_container">
                     <img
