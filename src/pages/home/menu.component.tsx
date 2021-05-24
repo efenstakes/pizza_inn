@@ -21,8 +21,9 @@ import { useEffect, useState } from "react"
 interface ComponentProps {
     selectedFilter: string,
     setSelectedFilter: Function,
+    setSelectedFood: Function,
 }
-const MenuComponent: React.FC<ComponentProps> = ({ selectedFilter, setSelectedFilter }) => {
+const MenuComponent: React.FC<ComponentProps> = ({ selectedFilter, setSelectedFilter, setSelectedFood }) => {
     const menu: Array<Food> = [
         {
             id: 1,
@@ -211,6 +212,7 @@ const MenuComponent: React.FC<ComponentProps> = ({ selectedFilter, setSelectedFi
                                 <IonCol sizeXs="12" sizeSm="6" sizeMd="4" sizeLg="3"  key={index}>
                                     <FoodCardComponent
                                         food={food}
+                                        setSelectedFood={setSelectedFood}
                                     />
                                 </IonCol>
                             )

@@ -10,3 +10,68 @@
     background-color: $primary_color;
     color: white;
 }
+
+
+
+
+
+.cart_empty {
+    height: 96%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.cart_content {
+    padding: 0 16px;
+}
+
+.cart_content__image_holder {
+    display: flex;
+    justify-content: center;
+}
+
+.cart_content__image {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
+
+.cart_content__name {
+    color: $primary_color;
+    font-family: 'Wendy One';
+    text-align: center;
+}
+
+.cart_content__name_2 {
+    margin-left: 4px;
+    color: $secondary_color;
+}
+
+.cart_content__type {
+    display: flex;
+    justify-content: center;
+}
+
+
+.quantity_button {
+    color: white;
+    background-color: $tertiary_color;
+    padding: 8px;
+    max-width: 36px;
+    max-height: 32px;
+    border-radius: 6px;
+}
+
+.cart_content__quantity {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+}
+.cart_content__quantity__buttons {
+    display: flex;
+    align-items: center;
+}
