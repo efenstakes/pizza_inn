@@ -2,6 +2,8 @@ import { useHistory } from 'react-router';
 import { 
     IonHeader, IonTitle, IonToolbar, IonButtons, IonButton, IonText,
     IonIcon,
+    IonFabButton,
+    IonFab,
 } from '@ionic/react';
 
 import { cartOutline } from 'ionicons/icons'
@@ -9,13 +11,10 @@ import { cartOutline } from 'ionicons/icons'
 import './appbar.component.css';
 
 
-interface ComponentProps {}
-const AppBarComponent: React.FC<ComponentProps> = () => {
-  const history = useHistory()
-
-  const goToContact =()=> {
-    // history.push('/contact')
-  }
+interface ComponentProps {
+    toggleShowCart: React.MouseEventHandler<HTMLIonFabButtonElement>,
+}
+const AppBarComponent: React.FC<ComponentProps> = ({ toggleShowCart }) => {
 
   return (
     <IonHeader translucent={false} className="appbar"
@@ -46,24 +45,18 @@ const AppBarComponent: React.FC<ComponentProps> = () => {
 
             <IonButtons slot="primary">
 
-                <IonButton 
-                    onClick={goToContact}
-                    color="primary" 
-                    fill="solid"
-                    size="default"
-                    strong={true}
-                    className="fd_6"
-                    style={{
-                        '--border-radius': '50px',
-                        // borderRadius: '40px',
-                        marginRight: '16px',
-                        '--padding-start': '18px',
-                        '--padding-end': '18px',
-                        fontSize: '.7rem',
-                    }}>
-                    {/* <IonButton shape="rounded"> */}
-                        <IonIcon slot="start" icon={cartOutline} />
-                </IonButton>
+                <IonFabButton
+                    onClick={toggleShowCart}
+                    size="small"
+                >
+                    <IonIcon 
+                        icon={cartOutline} 
+                        style={{
+                            fontSize: '1rem',
+                        }}
+                    />
+                </IonFabButton>
+                    
             </IonButtons>
 
         </IonToolbar>
