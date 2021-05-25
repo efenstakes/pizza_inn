@@ -24,33 +24,33 @@
 }
 
 
-.cart_content {
+.food_details {
     padding: 0 16px;
 }
 
-.cart_content__image_holder {
+.food_details__image_holder {
     display: flex;
     justify-content: center;
 }
 
-.cart_content__image {
+.food_details__image {
     height: 200px;
     width: 200px;
     border-radius: 50%;
 }
 
-.cart_content__name {
+.food_details__name {
     color: $primary_color;
     font-family: 'Wendy One';
     text-align: center;
 }
 
-.cart_content__name_2 {
+.food_details__name_2 {
     margin-left: 4px;
     color: $secondary_color;
 }
 
-.cart_content__type {
+.food_details__type {
     display: flex;
     justify-content: center;
 }
@@ -65,13 +65,13 @@
     border-radius: 6px;
 }
 
-.cart_content__quantity {
+.food_details__quantity {
     display: flex;
     justify-content: space-between;
     align-items: center;
     user-select: none;
 }
-.cart_content__quantity__buttons {
+.food_details__quantity__buttons {
     display: flex;
     align-items: center;
 }
