@@ -11,18 +11,23 @@ import './food_card.component.scss'
 interface ComponentProps {
     food: Food,
     setSelectedFood: Function,
+    addToCart: React.MouseEventHandler<HTMLIonFabButtonElement>,
 }
-const FoodCardComponent: React.FC<ComponentProps> = ({ food, setSelectedFood }) => {
+const FoodCardComponent: React.FC<ComponentProps> = ({ food, addToCart, setSelectedFood }) => {
     return (
-        <div className="food_card" onClick={ ()=> setSelectedFood(food) }>
+        <div className="food_card">
             <div className="food_card__image__wrapper">
-                <div className="food_card__image_container">
+                <div className="food_card__image_container" onClick={ ()=> setSelectedFood(food) }>
                     <img
                         className="food_card__image"
                         src={food.img}
                     />
                 </div>
-                <IonFabButton size="small" className="food_card__image_button">
+                <IonFabButton 
+                    size="small" 
+                    className="food_card__image_button"
+                    onClick={addToCart}
+                >
                     <IonIcon 
                         icon={cartOutline} 
                         style={{
