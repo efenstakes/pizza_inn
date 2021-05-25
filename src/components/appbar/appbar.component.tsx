@@ -11,11 +11,11 @@ import { cart, cartOutline } from 'ionicons/icons'
 import Food from '../../models/food.model';
 
 
-import './appbar.component.css';
+import './appbar.component.scss';
 
 
 interface ComponentProps {
-    toggleShowCart: React.MouseEventHandler<HTMLIonButtonElement>,
+    toggleShowCart: React.MouseEventHandler<HTMLDivElement>, // React.MouseEventHandler<HTMLIonButtonElement>,
     cart: Food[],
 }
 const AppBarComponent: React.FC<ComponentProps> = ({ toggleShowCart, cart }) => {
@@ -40,7 +40,7 @@ const AppBarComponent: React.FC<ComponentProps> = ({ toggleShowCart, cart }) => 
                 style={{
                     fontWeight: 700,
                     fontFamily: 'Wendy One',
-                    letterSpacing: '1px'
+                    letterSpacing: '1.6px'
                 }}
                 className="fd_4"
             >
@@ -49,22 +49,15 @@ const AppBarComponent: React.FC<ComponentProps> = ({ toggleShowCart, cart }) => 
 
             <IonButtons slot="primary">
 
-                {/* <IonFabButton
-                    onClick={toggleShowCart}
-                    size="small"
-                >
-                    <IonIcon 
-                        icon={cartOutline} 
-                        style={{
-                            fontSize: '1rem',
-                        }}
-                    />
-                </IonFabButton> */}
-                <IonButton
+                {/* <IonButton
                     onClick={toggleShowCart}
                     color="secondary"
                     fill="solid"
                     shape="round"
+                    style={{
+                        '--padding-start': '12px',
+                        '--padding-end': '12px',
+                    }}
                 >
                     <IonIcon 
                         icon={cartOutline} 
@@ -73,8 +66,26 @@ const AppBarComponent: React.FC<ComponentProps> = ({ toggleShowCart, cart }) => 
                             fontSize: '1rem',
                         }}
                     />
-                    {cart.length}
-                </IonButton>
+                    <div className="app_bar_cart_number">
+                        {cart.length}
+                    </div>
+                </IonButton> */}
+                <div 
+                    className="app_bar_cart" 
+                    onClick={toggleShowCart}
+                >
+                    <IonIcon 
+                        icon={cartOutline} 
+                        slot="start"
+                        style={{
+                            fontSize: '1.1rem',
+                            fontWeight: 'bold'
+                        }}
+                    />
+                    <div className="app_bar_cart_number">
+                        {cart.length}
+                    </div>
+                </div>
             </IonButtons>
 
         </IonToolbar>
