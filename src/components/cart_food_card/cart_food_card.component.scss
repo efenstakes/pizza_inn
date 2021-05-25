@@ -1,0 +1,66 @@
+@import '../../theme/commons';
+
+
+.cart_food_card {
+    display: flex;
+    position: relative;
+    width: 100%;
+
+    // background-color: hotpink;
+
+    // padding: 0 10px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+
+.cart_food_card__image_container {
+    height: 110px;
+    width: 110px;
+    border-radius: 50%;
+
+    overflow: hidden;
+}
+.cart_food_card__image {
+    object-fit: cover;
+    height: 110px;
+    width: 110px;
+    border-radius: 50%;
+    transition: 300ms;
+}
+.cart_food_card__image_container:hover .cart_food_card__image {
+    transform: scale(1.1) rotateZ(15deg);
+}
+
+
+.cart_food_card__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    flex-grow: 1;
+
+    // position: relative;
+    // width: 100%;
+
+    padding-right: 16px;
+    // background-color: hotpink;
+}
+
+.cart_food_card__content__name_n_delete {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // width: 100%;
+    // background-color: green;
+}
+
+
+.cart_food_card__content__quantity_n_price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-left: 20px;
+
+    user-select: none;
+}
