@@ -174,7 +174,7 @@ const HomePage = () => {
                         {/* fab */}
                         <IonFab vertical="bottom" horizontal="center" slot="fixed"
                             style={{
-                                transform: 'translateY(-100deg)'
+                                transform: 'translateY(-56px)'
                             }}>
                             <IonFabButton>
                                 <IonIcon icon={callOutline} />
