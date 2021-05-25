@@ -18,23 +18,16 @@ interface ComponentProps {
 }
 const FoodDetailsComponent:React.FC<ComponentProps> = ({ selectedFood, setSelectedFood, }) => {
     return (
-        <>
-            {/* <IonHeader>
-                <IonToolbar color="primary">
-                    <IonTitle>Menu</IonTitle>
-                </IonToolbar>
-            </IonHeader> */}
-            <IonContent>
-                {
-                    selectedFood &&
-                        <DetailsComponent food={selectedFood} />
-                }
-                {
-                    selectedFood == null &&
-                        <NoDetailsComponent />
-                }
-            </IonContent>
-        </>
+        <div className="app_drawer">
+            {
+                selectedFood &&
+                    <DetailsComponent food={selectedFood} />
+            }
+            {
+                selectedFood == null &&
+                    <NoDetailsComponent />
+            }
+        </div>
     )
 }
 
@@ -79,11 +72,13 @@ const DetailsComponent: React.FC<DetailsComponentProps> = ({ food })=> {
             <VSpacerComponent space={6} />
            
             {/* image */}
-            <div className="food_details__image_holder">
-                <img 
-                    src={food.img}
-                    className="food_details__image"
-                />
+            <div className="food_details__image_holder_center">
+                <div className="food_details__image_holder">
+                    <img 
+                        src={food.img}
+                        className="food_details__image"
+                    />
+                </div>
             </div>
 
             <VSpacerComponent space={2} />

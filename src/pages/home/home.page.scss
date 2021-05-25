@@ -4,6 +4,7 @@
 .filters {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .filter_chip__selected {
@@ -16,7 +17,7 @@
 
 
 .cart_empty {
-    height: 96%;
+    height: 96vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -28,16 +29,35 @@
     padding: 0 16px;
 }
 
-.food_details__image_holder {
+
+.food_details__image_holder_center {
+    position: relative;
     display: flex;
     justify-content: center;
+
+    // width: 100%;
+    // background-color: yellowgreen;
+}
+.food_details__image_holder {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+
+    overflow: hidden;
 }
 
 .food_details__image {
     height: 200px;
     width: 200px;
     border-radius: 50%;
+
+    transition: 300ms;
 }
+
+.food_details__image_holder:hover .food_details__image {
+    transform: rotateZ(20deg) scale(1.2);
+}
+
 
 .food_details__name {
     color: $primary_color;

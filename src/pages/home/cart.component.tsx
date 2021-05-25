@@ -25,38 +25,37 @@ const CartComponent:React.FC<ComponentProps> = ({ cart, addQuantity, minusQuanti
     
     if( cart.length === 0 ) {
         return (
-            <IonContent>
+            <div className="app_drawer">
                 <CartEmptyComponent/>
-            </IonContent>
+            </div>
         )
     }
     return (
-        <>
-            <IonContent>
-                
-                <VSpacerComponent space={6} />
-            
-                <IonTitle>
-                    Your Cart
-                </IonTitle>
+        <div className="app_drawer">
+            <div>
+            <VSpacerComponent space={3} />
+        
+            <IonTitle>
+                Your Cart
+            </IonTitle>
 
-                <VSpacerComponent space={2} />
+            <VSpacerComponent space={3} />
 
-                {
-                    cart.map(food=> {
-                        return (
-                            <CartFoodCardComponent
-                                key={food.id}
-                                food={food}
-                                addQuantity={addQuantity}
-                                minusQuantity={minusQuantity}
-                                removeFromCart={removeFromCart}
-                            />
-                        )
-                    })
-                }
-            </IonContent>
-        </>
+            {
+                cart.map(food=> {
+                    return (
+                        <CartFoodCardComponent
+                            key={food.id}
+                            food={food}
+                            addQuantity={addQuantity}
+                            minusQuantity={minusQuantity}
+                            removeFromCart={removeFromCart}
+                        />
+                    )
+                })
+            }
+            </div>
+        </div>
     )
 }
 
