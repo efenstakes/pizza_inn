@@ -6,15 +6,19 @@ import {
     IonFab,
 } from '@ionic/react';
 
-import { cartOutline } from 'ionicons/icons'
+import { cart, cartOutline } from 'ionicons/icons'
+
+import Food from '../../models/food.model';
+
 
 import './appbar.component.css';
 
 
 interface ComponentProps {
-    toggleShowCart: React.MouseEventHandler<HTMLIonFabButtonElement>,
+    toggleShowCart: React.MouseEventHandler<HTMLIonButtonElement>,
+    cart: Food[],
 }
-const AppBarComponent: React.FC<ComponentProps> = ({ toggleShowCart }) => {
+const AppBarComponent: React.FC<ComponentProps> = ({ toggleShowCart, cart }) => {
 
   return (
     <IonHeader translucent={false} className="appbar"
@@ -45,7 +49,7 @@ const AppBarComponent: React.FC<ComponentProps> = ({ toggleShowCart }) => {
 
             <IonButtons slot="primary">
 
-                <IonFabButton
+                {/* <IonFabButton
                     onClick={toggleShowCart}
                     size="small"
                 >
@@ -55,8 +59,22 @@ const AppBarComponent: React.FC<ComponentProps> = ({ toggleShowCart }) => {
                             fontSize: '1rem',
                         }}
                     />
-                </IonFabButton>
-                    
+                </IonFabButton> */}
+                <IonButton
+                    onClick={toggleShowCart}
+                    color="secondary"
+                    fill="solid"
+                    shape="round"
+                >
+                    <IonIcon 
+                        icon={cartOutline} 
+                        slot="start"
+                        style={{
+                            fontSize: '1rem',
+                        }}
+                    />
+                    {cart.length}
+                </IonButton>
             </IonButtons>
 
         </IonToolbar>
